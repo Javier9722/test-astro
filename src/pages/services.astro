@@ -1,6 +1,24 @@
-<h1>Mis servicios</h1>
-<p>
-  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis dolore fugit
-  placeat cupiditate neque esse dolorem rerum tempora in illo? Ab nihil debitis
-  nobis consequuntur nulla exercitationem qui eius laborum.
-</p>
+---
+import Layout from "../components/layout.astro";
+// importanto componentes
+import Card from "../components/card.astro";  
+import Name from "../components/name.astro";
+---
+
+<Layout title="Services" pageDescription="Servicios">
+  <h1>Mis servicios</h1>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor obcaecati, quia praesentium itaque voluptate natus dolorum. Nemo, veritatis? Optio, alias?</p>
+  <Card title="hola" content="Este es el contenido de hola" />
+  <Name name="Eduardo"></Name>
+  <Card title="Rigel" content="Este es el contenido de rigel" />
+  <Name name="Javier"></Name>
+  <Card title="xd" content="Este es el contenido de xd" />
+  <Name name="RF"></Name>
+</Layout>
+
+<style>
+  body {
+    background: #202020;
+    color: white;
+  }
+</style>

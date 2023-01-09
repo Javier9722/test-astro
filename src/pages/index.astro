@@ -1,15 +1,56 @@
 ---
+import Layout from "../components/layout.astro";
+// codigo de desarrollo
+const titulo = "Titulo de prueba";
+const colorWarning = "warning";
+const colorDanger = "danger";
+const colorSuccess = "success";
+
+const hobbies = ["Programar", "dotear", "dormir", "comer"];
+
+const isActive = false;
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
-  </head>
-  <body>
-    <h1>Bienvenido a mi web</h1>
-  </body>
-</html>
+<Layout title="index" pageDescription="Mis hobbies">
+  <!-- ////////////////////////////////////////////// -->
+  <h1 class="title">{titulo}</h1>
+  <!-- codigo de desarrollo interpretado -->
+  <h2 class={colorWarning}>Subtitulo</h2>
+  <h2 class={colorDanger}>SUbtitulo</h2>
+  <h2 class={colorSuccess}>Hobbies</h2>
+  <ul>
+    {hobbies.map((e) => <li>{e}</li>)}
+  </ul>
+  <h3 class={isActive ? colorSuccess : colorDanger}>
+    {isActive ? "El usuario esta activo" : "El usuario no esta activo"}
+  </h3>
+  <!-- ////////////////////////////////////////////// -->
+</Layout>
+
+
+<script>
+  console.log("hola");
+</script>
+<style>
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  ul {
+    margin: 0;
+  }
+  .title {
+    color: lightblue;
+  }
+  .danger {
+    color: red;
+  }
+  .warning {
+    color: yellow;
+  }
+  .success {
+    color: green;
+  }
+</style>
