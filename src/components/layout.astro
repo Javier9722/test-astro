@@ -14,7 +14,10 @@ const { title, pageDescription } = Astro.props;
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={pageDescription} />
-
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.15.4/css/all.css"
+    />
     <title>AstroCurso - {title}</title>
   </head>
   <body>
@@ -23,8 +26,26 @@ const { title, pageDescription } = Astro.props;
 </html>
 
 <style>
-  body {
+  :global(body) {
     background: #202020;
     color: white;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial,
+      sans-serif, "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol;
+    text-rendering: optimizeLegibility;
+    margin: 0;
+  }
+  :global(ul) {
+    margin: 0;
+    padding: 0;
+  }
+  :global(li) {
+    list-style: none;
+  }
+  :global(h1, h2, h3, h4, h5, h6, p) {
+    margin: 0;
+  }
+  :global(a) {
+    text-decoration: none;
+    color: inherit;
   }
 </style>
