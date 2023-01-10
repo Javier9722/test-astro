@@ -1,0 +1,59 @@
+---
+import Layout from "../../components/layout.astro";
+const posts = await Astro.glob("./posts/*.md");
+// console.log(posts.map((post) => post.frontmatter.title));
+---
+
+<Layout title="Blog" pageDescription="Descripcion del blog">
+  <h1 class="category">Blog</h1>
+  <ul class="items">
+    {
+      posts.map((post) => (
+        <li class="item">
+          <a href={post.url}>
+            <div>
+              <img
+                src="https://images.pexels.com/photos/354939/pexels-photo-354939.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                alt="Yo habia ponido una imagen aqui"
+              />
+              <h3 class="title-post">{post.frontmatter.title.toUpperCase()}</h3>
+              <p class="desc-post">{post.frontmatter.description}</p>
+            </div>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</Layout>
+
+<style>
+  .category {
+    margin: 10px 0 10px 10px;
+    color: orangered;
+  }
+  img {
+    width: 100%;
+  }
+  .items {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    justify-items: center;
+    padding: 0 20px;
+  }
+  .item {
+    min-width: 200px;
+    max-width: 300px;
+    background-color: black;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+  .title-post {
+    color: orange;
+    text-align: center;
+  }
+  .desc-post {
+    text-align: justify;
+    margin: 0 10px 10px 10px;
+  }
+</style>
