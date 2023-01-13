@@ -1,0 +1,11 @@
+---
+import Layout from "../components/layout.astro";
+import Button from "../components/ButtonSubscribe";
+---
+
+<Layout title="react" pageDescription="descripcion de react">
+  <h1>Integraciones con React</h1>
+  <p>Probando las integraciones de react con Astro</p>
+  <!-- astro lo combierte a estatico, pero si se necesita logica usar client:... -->
+  <Button client:visible />
+</Layout>
